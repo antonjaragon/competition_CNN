@@ -57,10 +57,12 @@ random.shuffle(cat_files)
 random.shuffle(dog_files)
 
 # Split files
-train_cat_files = cat_files[:int(0.8*len(cat_files))]
-test_cat_files = cat_files[int(0.8*len(cat_files)):]
-train_dog_files = dog_files[:int(0.8*len(dog_files))]
-test_dog_files = dog_files[int(0.8*len(dog_files)):]
+
+test_samples = 1000
+train_cat_files = cat_files[test_samples:]
+test_cat_files = cat_files[:test_samples]
+train_dog_files = dog_files[test_samples:]
+test_dog_files = dog_files[:test_samples]
 
 
 # copy them to the corresponding folders
